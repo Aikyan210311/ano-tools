@@ -61,6 +61,13 @@
   - 全局搜索确认没有残留 `Aiyin`、`AIYIN` 或 `aiyin`。
   - 执行 `npm.cmd run lint`，检查通过。
   - 执行 `npm.cmd run build`，构建通过。
+  - 根据用户反馈，取消左上角标题背景卡片，改为直接显示文字。
+  - 将左上角标题字号放大约 1.5 倍。
+  - 删除首页右下角三个占位卡片。
+  - 删除首页说明段落。
+  - 将首页主文案改为“用于制作发布一些小工具，开发中~~”。
+  - 再次执行 `npm.cmd run lint`，检查通过。
+  - 再次执行 `npm.cmd run build`，构建通过。
 - **创建/修改的文件：**
   - `src/App.tsx`
   - `package.json`
@@ -111,6 +118,9 @@
 | Git 提交 | `git commit -m "Initial AnoTools site"` | 创建首次提交 | `ae44a93` | 通过 |
 | Git 远程推送 | `git push -u origin main` | 推送 main 到 GitHub | 推送成功 | 通过 |
 | GitHub Actions | API 查询最新 workflow | 构建并部署成功 | `Setup Pages` 失败 | 阻塞 |
+| 首页视觉调整 | 用户指定变更 | 标题、文案、占位卡片按要求调整 | 已完成 | 通过 |
+| 代码检查 | `npm.cmd run lint` | ESLint 无错误 | 通过 | 通过 |
+| 构建项目 | `npm.cmd run build` | 构建成功 | Vite build 成功 | 通过 |
 | 本地预览 | `npm.cmd run dev -- --host 127.0.0.1` | 本地服务可访问 | `http://127.0.0.1:5173` 返回 200 | 通过 |
 | 品牌英文残留检查 | `rg "Aiyin|AIYIN|aiyin"` | 无结果 | 无结果 | 通过 |
 | 代码检查 | `npm.cmd run lint` | ESLint 无错误 | 通过 | 通过 |
@@ -129,8 +139,8 @@
 ## 五问重启检查
 | 问题 | 答案 |
 |------|------|
-| 我在哪里？ | 阶段 7 进行中，代码已推送到 GitHub，Pages 设置尚需启用 GitHub Actions |
-| 我要去哪里？ | 在 GitHub 仓库 Settings -> Pages 中选择 GitHub Actions，然后重跑 workflow |
+| 我在哪里？ | 阶段 4 进行中，首页标题和文案已按用户反馈调整 |
+| 我要去哪里？ | 推送本次首页修改并等待 GitHub Pages 自动更新 |
 | 目标是什么？ | 把项目维护成可持续扩展的个人/朋友小工具网页 |
 | 我学到了什么？ | 见 `findings.md` |
 | 我做了什么？ | 见本文件上方阶段日志 |

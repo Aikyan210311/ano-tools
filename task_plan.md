@@ -4,7 +4,7 @@
 把 `D:\Aikyan\AikaynTools` 持续维护成一个给自己和朋友使用的小工具网页项目，先稳定前端底座，再逐步添加具体工具。
 
 ## 当前阶段
-阶段 7：GitHub Pages 部署发布
+阶段 4：首页视觉与交互完善
 
 ## 各阶段
 
@@ -31,9 +31,9 @@
 
 ### 阶段 4：首页视觉与交互完善
 - [ ] 在浏览器检查桌面端和手机端布局
-- [ ] 根据实际截图调整背景透明度、文字层级和卡片密度
-- [ ] 确认首页是否保留说明文案，或改成更纯粹的工具入口
-- **状态：** pending
+- [x] 根据反馈调整首页标题、主文案和占位卡片
+- [x] 删除首页说明段落和右下角三个占位卡片
+- **状态：** in_progress
 
 ### 阶段 5：第一批工具规划
 - [ ] 收集最常用的 3-5 个工具需求
@@ -53,8 +53,8 @@
 - [x] 初始化本地 Git 仓库并完成首次提交
 - [x] 创建或连接 GitHub 远程仓库
 - [x] 推送 `main` 分支并触发 Pages 部署
-- [ ] 在 GitHub 仓库 Pages 设置中选择 `GitHub Actions`
-- **状态：** in_progress
+- [x] 在 GitHub 仓库 Pages 设置中选择 `GitHub Actions`
+- **状态：** complete
 
 ## 已做决策
 | 决策 | 理由 |
@@ -76,9 +76,9 @@
 | GitHub Pages workflow 首次运行在 `Setup Pages` 失败 | 1 | 需要在仓库 Settings -> Pages 中把 Source 设置为 `GitHub Actions` 后重跑 |
 
 ## 下一步默认任务
-1. 在 GitHub 仓库 Settings -> Pages 中选择 `GitHub Actions`。
-2. 重新运行失败的 Actions，或再次 push 一个提交触发部署。
-3. 等待 Actions 部署完成并记录公开访问链接。
+1. 等待本次首页修改的 GitHub Actions 部署完成。
+2. 打开公开站点检查首页视觉效果。
+3. 选择第一个要实现的小工具。
 
 ## 维护规则
 - 每次开始新任务前先读取 `task_plan.md`、`findings.md`、`progress.md`。
