@@ -90,3 +90,9 @@
 - 新增工具前先在本文件补充任务，再执行实现。
 - 后续功能或视觉修改默认只在本地完成并验证；不要主动 commit、push 或触发 GitHub Pages 发布。
 - 只有用户明确说“发布”“更新到 GitHub”“推送线上”等意思时，才提交并推送到远程仓库。
+
+## 最新发布
+- 2026-04-27 已发布轮播首页版本。
+- 提交：`7cfa2f3 Publish carousel homepage`
+- 线上地址：`https://aikyan210311.github.io/ano-tools/`
+- 验证：线上首页返回 HTTP 200，资源 hash 与本地构建产物一致。

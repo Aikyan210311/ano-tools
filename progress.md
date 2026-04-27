@@ -159,3 +159,22 @@
 | 目标是什么？ | 把项目维护成可持续扩展的个人/朋友小工具网页 |
 | 我学到了什么？ | 见 `findings.md` |
 | 我做了什么？ | 见本文件上方阶段日志 |
+
+## 发布记录
+
+### 2026-04-27：发布轮播首页版本
+- **状态：** complete
+- **提交：** `7cfa2f3 Publish carousel homepage`
+- **远程分支：** `origin/main`
+- **线上地址：** `https://aikyan210311.github.io/ano-tools/`
+- **发布前验证：**
+  - `npm.cmd run lint` 通过。
+  - `npm.cmd run build` 通过。
+  - 构建产物包含新的首页 JS/CSS hash：`index-B0roGbqp.js`、`index-BtMV2YqU.css`。
+- **发布验证：**
+  - `git push origin main` 成功。
+  - GitHub API 查询遇到公共限流，未使用 API 继续查询。
+  - 线上首页返回 HTTP 200。
+  - 线上 `index.html` 引用 `./assets/index-B0roGbqp.js` 和 `./assets/index-BtMV2YqU.css`，与本地构建结果一致。
+- **注意：**
+  - 当前轮播资源中 `images/27_clear.png` 约 18MB，后续建议压缩或替换，降低首屏加载压力。
