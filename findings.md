@@ -52,7 +52,10 @@
 - 工作流在 push 到 `main` 时运行：checkout -> setup Node 24 -> `npm ci` -> `npm run build` -> upload `dist` -> deploy Pages。
 - `vite.config.ts` 已设置 `base: './'`，避免 GitHub Pages 项目站点位于 `/仓库名/` 时资源路径失效。
 - 本地 Git 仓库已初始化，首次提交为 `ae44a93 Initial AnoTools site`。
-- 发布还需要 GitHub 远程仓库地址，并在仓库 Pages 设置中选择 `GitHub Actions`。
+- 远程仓库已设置为 `https://github.com/Aikyan210311/ano-tools.git`，`main` 分支已推送。
+- 首次 GitHub Actions 运行地址：`https://github.com/Aikyan210311/ano-tools/actions/runs/24979567422`。
+- 首次运行结果：`Build` 成功，`Setup Pages` 失败，`Deploy` 被跳过。
+- 发布还需要在仓库 Pages 设置中选择 `GitHub Actions`，然后重跑失败的 workflow。
 
 ## 视觉发现
 - 背景图是横向偏宽的动漫房间图。

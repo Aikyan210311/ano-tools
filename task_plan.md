@@ -51,8 +51,8 @@
 - [x] 添加 GitHub Pages Actions 部署工作流
 - [x] 调整 Vite 静态资源路径以适配 GitHub Pages 子路径
 - [x] 初始化本地 Git 仓库并完成首次提交
-- [ ] 创建或连接 GitHub 远程仓库
-- [ ] 推送 `main` 分支并触发 Pages 部署
+- [x] 创建或连接 GitHub 远程仓库
+- [x] 推送 `main` 分支并触发 Pages 部署
 - [ ] 在 GitHub 仓库 Pages 设置中选择 `GitHub Actions`
 - **状态：** in_progress
 
@@ -73,12 +73,12 @@
 | 当前环境 `npm` 不可用，`node` 指向 Codex 应用内置路径且执行被拒绝 | 2 | 已记录，下一阶段需要在本机安装或修复 Node.js LTS |
 | `planning-with-files-zh` 技能文件和模板在终端显示乱码 | 1 | 按可识别流程手动创建中文规划文件 |
 | PowerShell 直接运行 `npm` 会命中 `npm.ps1` 并被执行策略拦截 | 1 | 使用 `npm.cmd` 可正常执行；也可以调整 PowerShell 执行策略 |
+| GitHub Pages workflow 首次运行在 `Setup Pages` 失败 | 1 | 需要在仓库 Settings -> Pages 中把 Source 设置为 `GitHub Actions` 后重跑 |
 
 ## 下一步默认任务
-1. 在 GitHub 创建远程仓库，建议仓库名 `ano-tools`。
-2. 添加远程地址并推送 `main` 分支。
-3. 在 GitHub 仓库 Settings -> Pages 中选择 `GitHub Actions`。
-4. 等待 Actions 部署完成并记录公开访问链接。
+1. 在 GitHub 仓库 Settings -> Pages 中选择 `GitHub Actions`。
+2. 重新运行失败的 Actions，或再次 push 一个提交触发部署。
+3. 等待 Actions 部署完成并记录公开访问链接。
 
 ## 维护规则
 - 每次开始新任务前先读取 `task_plan.md`、`findings.md`、`progress.md`。

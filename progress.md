@@ -80,6 +80,9 @@
   - 初始化 Git 仓库，创建 `main` 分支。
   - 完成首次提交：`ae44a93 Initial AnoTools site`。
   - 检查到本机未安装 GitHub CLI，且没有远程仓库地址或 GitHub token。
+  - 添加远程仓库 `https://github.com/Aikyan210311/ano-tools.git`。
+  - 推送 `main` 分支到 GitHub。
+  - 检查 GitHub Actions 首次运行：构建成功，但 `Setup Pages` 失败，部署被跳过。
 - **创建/修改的文件：**
   - `.github/workflows/deploy.yml`
   - `.gitignore`
@@ -106,6 +109,8 @@
 | GitHub Pages 工作流构建验证 | `npm.cmd run build` | 构建成功 | Vite build 成功 | 通过 |
 | Git 初始化 | `git init -b main` | 创建本地仓库 | 已创建 `.git` | 通过 |
 | Git 提交 | `git commit -m "Initial AnoTools site"` | 创建首次提交 | `ae44a93` | 通过 |
+| Git 远程推送 | `git push -u origin main` | 推送 main 到 GitHub | 推送成功 | 通过 |
+| GitHub Actions | API 查询最新 workflow | 构建并部署成功 | `Setup Pages` 失败 | 阻塞 |
 | 本地预览 | `npm.cmd run dev -- --host 127.0.0.1` | 本地服务可访问 | `http://127.0.0.1:5173` 返回 200 | 通过 |
 | 品牌英文残留检查 | `rg "Aiyin|AIYIN|aiyin"` | 无结果 | 无结果 | 通过 |
 | 代码检查 | `npm.cmd run lint` | ESLint 无错误 | 通过 | 通过 |
@@ -119,12 +124,13 @@
 | 2026-04-27 | `planning-with-files-zh` 技能说明和模板显示乱码 | 1 | 使用可识别流程手动创建中文文档 |
 | 2026-04-27 | PowerShell 直接执行 `npm` 被 `npm.ps1` 执行策略拦截 | 1 | 改用 `npm.cmd` 执行 |
 | 2026-04-27 | 本机未安装 GitHub CLI，且没有远程仓库地址 | 1 | 已完成本地部署配置；需要创建 GitHub 仓库后推送 |
+| 2026-04-27 | GitHub Actions 在 `Setup Pages` 步骤失败 | 1 | 需要在 GitHub 仓库 Settings -> Pages 中选择 `GitHub Actions` 后重跑 |
 
 ## 五问重启检查
 | 问题 | 答案 |
 |------|------|
-| 我在哪里？ | 阶段 7 进行中，GitHub Pages 部署配置和本地提交已完成 |
-| 我要去哪里？ | 创建或连接 GitHub 远程仓库，推送 main 分支，等待 Pages 部署完成 |
+| 我在哪里？ | 阶段 7 进行中，代码已推送到 GitHub，Pages 设置尚需启用 GitHub Actions |
+| 我要去哪里？ | 在 GitHub 仓库 Settings -> Pages 中选择 GitHub Actions，然后重跑 workflow |
 | 目标是什么？ | 把项目维护成可持续扩展的个人/朋友小工具网页 |
 | 我学到了什么？ | 见 `findings.md` |
 | 我做了什么？ | 见本文件上方阶段日志 |
