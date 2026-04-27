@@ -96,3 +96,17 @@
 - 提交：`7cfa2f3 Publish carousel homepage`
 - 线上地址：`https://aikyan210311.github.io/ano-tools/`
 - 验证：线上首页返回 HTTP 200，资源 hash 与本地构建产物一致。
+
+## 当前未发布改动
+- 首页已按用户提供的五张参考图完成本地视觉改版。
+- 改动内容：发光斜体标题、深蓝纹理背景、霓虹漂浮物、右上角横向展开菜单动画。
+- 验证：`npm.cmd run lint`、`npm.cmd run build`、本地 `http://127.0.0.1:5175` 均通过。
+- 状态：未提交、未推送、未发布线上。
+- 后续调整：左上角标题已替换为 `images/generated/title-cutout.png`；漂浮物已替换为 `images/generated/float-*.png`；轮播圆点最多 6 个并移动到圆盘下方；菜单、scroll、official 位置已按截图反馈微调。
+- 最新本地验证：`npm.cmd run lint`、`npm.cmd run build`、本地 `http://127.0.0.1:5176` 均通过。
+- 最新细调：标题继续左上移；圆盘放大；取消轮播圆点和图片数量限制；点击圆盘切下一张；漂浮物恢复 CSS 版本；删除灯笼；SCROLL 居中；新增月亮 loading、闪白转场和元素入场动画。
+- 最新本地验证：`npm.cmd run lint`、`npm.cmd run build`、本地 `http://127.0.0.1:5177` 均通过。
+- 再次细调：标题进一步左上移并删除小字；圆盘继续放大；轮播图改为 `contain` 尽量完整显示；loading 月球增强 3D 感；闪白和元素入场动画放慢、行程加长。
+- 最新本地验证：`npm.cmd run lint`、`npm.cmd run build`、本地 `http://127.0.0.1:5178` 均通过。
+- 最新本地细调：loading 改为旋转唱片，唱片中心使用 `images/iloha.png`；标题继续左上移动；圆盘轮播恢复 `cover` 显示并收紧外圈比例，增大内圈图片显示区域。
+- 最新本地验证：`npm.cmd run lint`、`npm.cmd run build`、本地 `http://127.0.0.1:5178` 均通过。
