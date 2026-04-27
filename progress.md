@@ -68,8 +68,18 @@
   - 将首页主文案改为“用于制作发布一些小工具，开发中~~”。
   - 再次执行 `npm.cmd run lint`，检查通过。
   - 再次执行 `npm.cmd run build`，构建通过。
+  - 用户确认后续修改默认只做本地修改和测试，明确要求发布时再提交并推送到 GitHub Pages。
+  - 根据用户要求参考 `https://www.cho-kaguyahime.com/` 首页，重做当前首页主视觉。
+  - 将首页改成暗色霓虹舞台风格：中央大圆形轮播、装饰环、霓虹云形线框、右上 MENU 圆按钮、右侧按钮和底部 SCROLL 提示。
+  - 使用 `import.meta.glob` 自动引入 `images` 文件夹中的图片格式资源，作为圆形主视觉轮播内容。
+  - 新增 `src/vite-env.d.ts`，补充 Vite 类型声明。
+  - 执行 `npm.cmd run lint`，检查通过。
+  - 执行 `npm.cmd run build`，构建通过。
+  - 启动本地开发服务 `http://127.0.0.1:5174`，访问返回 HTTP 200。
 - **创建/修改的文件：**
   - `src/App.tsx`
+  - `src/styles.css`
+  - `src/vite-env.d.ts`
   - `package.json`
   - `package-lock.json`
   - `task_plan.md`
@@ -121,10 +131,15 @@
 | 首页视觉调整 | 用户指定变更 | 标题、文案、占位卡片按要求调整 | 已完成 | 通过 |
 | 代码检查 | `npm.cmd run lint` | ESLint 无错误 | 通过 | 通过 |
 | 构建项目 | `npm.cmd run build` | 构建成功 | Vite build 成功 | 通过 |
+| 发布流程约定 | 用户说明 | 后续默认本地测试，按要求再发布 | 已记录 | 通过 |
 | 本地预览 | `npm.cmd run dev -- --host 127.0.0.1` | 本地服务可访问 | `http://127.0.0.1:5173` 返回 200 | 通过 |
 | 品牌英文残留检查 | `rg "Aiyin|AIYIN|aiyin"` | 无结果 | 无结果 | 通过 |
 | 代码检查 | `npm.cmd run lint` | ESLint 无错误 | 通过 | 通过 |
 | 构建项目 | `npm.cmd run build` | 构建成功 | Vite build 成功 | 通过 |
+| 参考站风格首页改版代码检查 | `npm.cmd run lint` | ESLint 无错误 | 通过 | 通过 |
+| 参考站风格首页改版构建 | `npm.cmd run build` | 构建成功 | Vite build 成功，图片资源已打包 | 通过 |
+| 首页本地访问 | `npm.cmd run dev -- --host 127.0.0.1 --port 5174` + `Invoke-WebRequest` | 本地服务返回 HTTP 200 | `http://127.0.0.1:5174` 返回 200 | 通过 |
+| 首页关键内容检查 | `rg "circle-stage|slide-image|AnoTools|用于制作发布一些小工具" src dist` | 源码和构建产物包含关键结构 | 已包含中央轮播、品牌和主文案 | 通过 |
 
 ## 错误日志
 | 时间 | 错误 | 尝试次数 | 处理 |
@@ -140,7 +155,7 @@
 | 问题 | 答案 |
 |------|------|
 | 我在哪里？ | 阶段 4 进行中，首页标题和文案已按用户反馈调整 |
-| 我要去哪里？ | 推送本次首页修改并等待 GitHub Pages 自动更新 |
+| 我要去哪里？ | 后续修改先在本地验证，用户明确要求发布时再提交推送 |
 | 目标是什么？ | 把项目维护成可持续扩展的个人/朋友小工具网页 |
 | 我学到了什么？ | 见 `findings.md` |
 | 我做了什么？ | 见本文件上方阶段日志 |
