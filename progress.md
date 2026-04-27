@@ -1,0 +1,106 @@
+# 进度日志：爱音的工具箱
+
+## 会话：2026-04-27
+
+### 阶段 1：前端底座搭建
+- **状态：** complete
+- **执行的操作：**
+  - 检查项目目录，确认初始目录中只有 `images` 文件夹。
+  - 查看背景图尺寸和内容，确认可作为首页背景。
+  - 创建 Vite + React + TypeScript 项目文件。
+  - 创建首页 UI：左上角站点名“爱音的工具箱”、主视觉文案、工具入口占位卡片。
+  - 创建 VSCode 推荐插件和保存设置。
+  - 创建 README。
+- **创建/修改的文件：**
+  - `package.json`
+  - `index.html`
+  - `tsconfig.json`
+  - `tsconfig.app.json`
+  - `tsconfig.node.json`
+  - `vite.config.ts`
+  - `eslint.config.js`
+  - `.gitignore`
+  - `.vscode/extensions.json`
+  - `.vscode/settings.json`
+  - `src/main.tsx`
+  - `src/App.tsx`
+  - `src/styles.css`
+  - `README.md`
+
+### 阶段 2：项目管理与记忆文件建立
+- **状态：** complete
+- **执行的操作：**
+  - 根据用户要求启用 `planning-with-files-zh` 技能。
+  - 读取技能说明和模板，发现终端显示存在编码乱码。
+  - 按技能核心流程创建长期规划、发现记录和进度日志。
+- **创建/修改的文件：**
+  - `task_plan.md`
+  - `findings.md`
+  - `progress.md`
+
+### 阶段 3：本地开发环境修复
+- **状态：** complete
+- **执行的操作：**
+  - 检查安装后环境，确认 `C:\Program Files\nodejs\node.exe` 和 `C:\Program Files\nodejs\npm.cmd` 已存在。
+  - 临时把 `C:\Program Files\nodejs` 加到当前 PATH 最前面。
+  - 确认 Node 版本为 `v24.15.0`。
+  - 使用 `npm.cmd -v` 确认 npm 版本为 `11.12.1`。
+  - 执行 `npm.cmd install` 安装依赖。
+  - 执行 `npm.cmd run lint`，ESLint 检查通过。
+  - 执行 `npm.cmd run build`，生产构建通过。
+  - 启动 Vite 开发服务并访问 `http://127.0.0.1:5173`，返回 HTTP 200。
+- **创建/修改的文件：**
+  - `package-lock.json`
+  - `node_modules/`
+
+### 阶段 4：首页视觉与交互完善
+- **状态：** in_progress
+- **执行的操作：**
+  - 根据用户反馈，将首页英文小标识从 `Aiyin Tools` 改为 `AnoTools`。
+  - 将项目包名从 `aiyin-toolbox` 改为 `ano-tools`。
+  - 全局搜索确认没有残留 `Aiyin`、`AIYIN` 或 `aiyin`。
+  - 执行 `npm.cmd run lint`，检查通过。
+  - 执行 `npm.cmd run build`，构建通过。
+- **创建/修改的文件：**
+  - `src/App.tsx`
+  - `package.json`
+  - `package-lock.json`
+  - `task_plan.md`
+  - `findings.md`
+  - `progress.md`
+
+## 测试结果
+| 测试 | 输入 | 预期结果 | 实际结果 | 状态 |
+|------|------|---------|---------|------|
+| 检查项目文件结构 | `Get-ChildItem -Recurse -Depth 2` | 看到前端项目文件 | 已看到完整文件结构 | 通过 |
+| 检查背景图引用 | `Select-String src/styles.css background-image` | 引用现有图片 | 引用 `../images/6a249ef4-af75-4b75-ba0c-622dd212cd11.jpg` | 通过 |
+| 检查首页站点名 | `Select-String src/App.tsx 爱音的工具箱` | 左上角包含站点名 | 已包含站点名和首页 aria-label | 通过 |
+| 解析 VSCode JSON | `ConvertFrom-Json` | JSON 可解析 | settings 和 extensions 均可解析 | 通过 |
+| 安装依赖 | `npm install` | 安装依赖 | `npm` 未识别 | 阻塞 |
+| 构建项目 | `npm run build` | 构建成功 | 因 npm 不可用未执行 | 阻塞 |
+| 检查 Node | `node -v` | 输出 Node 版本 | 使用临时 PATH 后输出 `v24.15.0` | 通过 |
+| 检查 npm | `npm.cmd -v` | 输出 npm 版本 | 输出 `11.12.1` | 通过 |
+| 安装依赖 | `npm.cmd install` | 安装依赖 | added 175 packages | 通过 |
+| 代码检查 | `npm.cmd run lint` | ESLint 无错误 | 通过 | 通过 |
+| 构建项目 | `npm.cmd run build` | 构建成功 | Vite build 成功 | 通过 |
+| 本地预览 | `npm.cmd run dev -- --host 127.0.0.1` | 本地服务可访问 | `http://127.0.0.1:5173` 返回 200 | 通过 |
+| 品牌英文残留检查 | `rg "Aiyin|AIYIN|aiyin"` | 无结果 | 无结果 | 通过 |
+| 代码检查 | `npm.cmd run lint` | ESLint 无错误 | 通过 | 通过 |
+| 构建项目 | `npm.cmd run build` | 构建成功 | Vite build 成功 | 通过 |
+
+## 错误日志
+| 时间 | 错误 | 尝试次数 | 处理 |
+|------|------|---------|------|
+| 2026-04-27 | `node --version` 报 `Access is denied` | 1 | 记录为环境问题 |
+| 2026-04-27 | `npm` 不被识别 | 2 | 记录为环境问题，需安装 Node.js LTS |
+| 2026-04-27 | `planning-with-files-zh` 技能说明和模板显示乱码 | 1 | 使用可识别流程手动创建中文文档 |
+| 2026-04-27 | PowerShell 直接执行 `npm` 被 `npm.ps1` 执行策略拦截 | 1 | 改用 `npm.cmd` 执行 |
+
+## 五问重启检查
+| 问题 | 答案 |
+|------|------|
+| 我在哪里？ | 阶段 4 进行中，已完成英文品牌标识修正 |
+| 我要去哪里？ | 打开本地页面检查视觉效果，然后开始规划第一个工具 |
+| 目标是什么？ | 把项目维护成可持续扩展的个人/朋友小工具网页 |
+| 我学到了什么？ | 见 `findings.md` |
+| 我做了什么？ | 见本文件上方阶段日志 |
