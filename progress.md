@@ -69,6 +69,26 @@
   - `findings.md`
   - `progress.md`
 
+### 阶段 7：GitHub Pages 部署发布
+- **状态：** in_progress
+- **执行的操作：**
+  - 查阅 GitHub Pages 官方文档，确认可用自定义 GitHub Actions workflow 发布站点。
+  - 添加 `.github/workflows/deploy.yml`，自动构建并部署 `dist/`。
+  - 将 Vite `base` 设置为 `./`，适配 GitHub Pages 仓库子路径。
+  - 执行 `npm.cmd run lint`，检查通过。
+  - 执行 `npm.cmd run build`，构建通过。
+  - 初始化 Git 仓库，创建 `main` 分支。
+  - 完成首次提交：`ae44a93 Initial AnoTools site`。
+  - 检查到本机未安装 GitHub CLI，且没有远程仓库地址或 GitHub token。
+- **创建/修改的文件：**
+  - `.github/workflows/deploy.yml`
+  - `.gitignore`
+  - `vite.config.ts`
+  - `README.md`
+  - `task_plan.md`
+  - `findings.md`
+  - `progress.md`
+
 ## 测试结果
 | 测试 | 输入 | 预期结果 | 实际结果 | 状态 |
 |------|------|---------|---------|------|
@@ -83,6 +103,9 @@
 | 安装依赖 | `npm.cmd install` | 安装依赖 | added 175 packages | 通过 |
 | 代码检查 | `npm.cmd run lint` | ESLint 无错误 | 通过 | 通过 |
 | 构建项目 | `npm.cmd run build` | 构建成功 | Vite build 成功 | 通过 |
+| GitHub Pages 工作流构建验证 | `npm.cmd run build` | 构建成功 | Vite build 成功 | 通过 |
+| Git 初始化 | `git init -b main` | 创建本地仓库 | 已创建 `.git` | 通过 |
+| Git 提交 | `git commit -m "Initial AnoTools site"` | 创建首次提交 | `ae44a93` | 通过 |
 | 本地预览 | `npm.cmd run dev -- --host 127.0.0.1` | 本地服务可访问 | `http://127.0.0.1:5173` 返回 200 | 通过 |
 | 品牌英文残留检查 | `rg "Aiyin|AIYIN|aiyin"` | 无结果 | 无结果 | 通过 |
 | 代码检查 | `npm.cmd run lint` | ESLint 无错误 | 通过 | 通过 |
@@ -95,12 +118,13 @@
 | 2026-04-27 | `npm` 不被识别 | 2 | 记录为环境问题，需安装 Node.js LTS |
 | 2026-04-27 | `planning-with-files-zh` 技能说明和模板显示乱码 | 1 | 使用可识别流程手动创建中文文档 |
 | 2026-04-27 | PowerShell 直接执行 `npm` 被 `npm.ps1` 执行策略拦截 | 1 | 改用 `npm.cmd` 执行 |
+| 2026-04-27 | 本机未安装 GitHub CLI，且没有远程仓库地址 | 1 | 已完成本地部署配置；需要创建 GitHub 仓库后推送 |
 
 ## 五问重启检查
 | 问题 | 答案 |
 |------|------|
-| 我在哪里？ | 阶段 4 进行中，已完成英文品牌标识修正 |
-| 我要去哪里？ | 打开本地页面检查视觉效果，然后开始规划第一个工具 |
+| 我在哪里？ | 阶段 7 进行中，GitHub Pages 部署配置和本地提交已完成 |
+| 我要去哪里？ | 创建或连接 GitHub 远程仓库，推送 main 分支，等待 Pages 部署完成 |
 | 目标是什么？ | 把项目维护成可持续扩展的个人/朋友小工具网页 |
 | 我学到了什么？ | 见 `findings.md` |
 | 我做了什么？ | 见本文件上方阶段日志 |

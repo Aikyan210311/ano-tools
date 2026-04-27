@@ -15,6 +15,7 @@
 | 先做纯前端 | 当前需求不需要登录、数据库或服务端计算 |
 | VSCode 推荐 ESLint 和 Prettier | 保持代码风格稳定，方便长期维护 |
 | 英文品牌名统一使用 `Ano` / `AnoTools` | 用户指定以后所有“爱音”的英文使用 Ano |
+| 使用 GitHub Pages + Actions 发布 | GitHub Pages 支持通过自定义 GitHub Actions workflow 发布构建产物 |
 
 ## 已创建的核心文件
 - `package.json`：依赖、脚本和项目元信息。
@@ -42,6 +43,16 @@
 - `npm install`、`npm run lint`、`npm run build` 已通过。
 - `npm run dev -- --host 127.0.0.1` 已启动，`http://127.0.0.1:5173` 返回 HTTP 200。
 - `npm install` 后提示 2 个 moderate 漏洞，暂未执行 `npm audit fix --force`，避免破坏性升级。
+- Git 已安装，版本 `2.49.0.windows.1`。
+- GitHub CLI `gh` 未安装。
+- 当前没有 GitHub token 环境变量，也没有远程仓库地址。
+
+## 部署发现
+- 已添加 `.github/workflows/deploy.yml`。
+- 工作流在 push 到 `main` 时运行：checkout -> setup Node 24 -> `npm ci` -> `npm run build` -> upload `dist` -> deploy Pages。
+- `vite.config.ts` 已设置 `base: './'`，避免 GitHub Pages 项目站点位于 `/仓库名/` 时资源路径失效。
+- 本地 Git 仓库已初始化，首次提交为 `ae44a93 Initial AnoTools site`。
+- 发布还需要 GitHub 远程仓库地址，并在仓库 Pages 设置中选择 `GitHub Actions`。
 
 ## 视觉发现
 - 背景图是横向偏宽的动漫房间图。

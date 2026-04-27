@@ -4,7 +4,7 @@
 把 `D:\Aikyan\AikaynTools` 持续维护成一个给自己和朋友使用的小工具网页项目，先稳定前端底座，再逐步添加具体工具。
 
 ## 当前阶段
-阶段 4：首页视觉与交互完善
+阶段 7：GitHub Pages 部署发布
 
 ## 各阶段
 
@@ -47,6 +47,15 @@
 - [ ] 评估是否需要 PWA、后端、数据库或部署平台
 - **状态：** pending
 
+### 阶段 7：GitHub Pages 部署发布
+- [x] 添加 GitHub Pages Actions 部署工作流
+- [x] 调整 Vite 静态资源路径以适配 GitHub Pages 子路径
+- [x] 初始化本地 Git 仓库并完成首次提交
+- [ ] 创建或连接 GitHub 远程仓库
+- [ ] 推送 `main` 分支并触发 Pages 部署
+- [ ] 在 GitHub 仓库 Pages 设置中选择 `GitHub Actions`
+- **状态：** in_progress
+
 ## 已做决策
 | 决策 | 理由 |
 |------|------|
@@ -56,6 +65,7 @@
 | 首页先不引入路由 | 工具数量还少，用配置数组预留入口即可 |
 | 使用根目录 `images` 文件夹中的 JPG 作为背景 | 用户已准备图片，符合当前视觉要求 |
 | 英文品牌名统一使用 `Ano`，站点英文标识使用 `AnoTools` | 用户指定“爱音”的英文以后统一使用 Ano |
+| 使用 GitHub Pages + GitHub Actions 发布 | 项目是纯前端静态站，构建输出 `dist/` 可直接托管 |
 
 ## 遇到的问题
 | 问题 | 尝试次数 | 当前处理 |
@@ -65,9 +75,10 @@
 | PowerShell 直接运行 `npm` 会命中 `npm.ps1` 并被执行策略拦截 | 1 | 使用 `npm.cmd` 可正常执行；也可以调整 PowerShell 执行策略 |
 
 ## 下一步默认任务
-1. 打开本地页面检查视觉效果。
-2. 根据截图调整首页背景和卡片布局。
-3. 选择第一个要实现的小工具。
+1. 在 GitHub 创建远程仓库，建议仓库名 `ano-tools`。
+2. 添加远程地址并推送 `main` 分支。
+3. 在 GitHub 仓库 Settings -> Pages 中选择 `GitHub Actions`。
+4. 等待 Actions 部署完成并记录公开访问链接。
 
 ## 维护规则
 - 每次开始新任务前先读取 `task_plan.md`、`findings.md`、`progress.md`。
