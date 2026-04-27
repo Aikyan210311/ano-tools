@@ -292,3 +292,12 @@
   - `npm.cmd run lint` 通过。
   - `npm.cmd run build` 通过。
   - 本地开发服务 `http://127.0.0.1:5178` 返回 HTTP 200。
+### 2026-04-27：发布 animated homepage visuals
+- **状态：** 已发布线上。
+- **提交：** `b9edf31 Update animated homepage visuals`
+- **远程分支：** `origin/main`
+- **线上地址：** `https://aikyan210311.github.io/ano-tools/`
+- **发布验证：**
+  - `git push origin main` 成功。
+  - GitHub API 公共请求被限流，未使用 API 查询 Actions。
+  - 线上 `index.html` 已引用本次构建产物：`index-CjXPVz8w.js` 与 `index-DAiU9Gwr.css`。
