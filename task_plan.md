@@ -92,10 +92,10 @@
 - 只有用户明确说“发布”“更新到 GitHub”“推送线上”等意思时，才提交并推送到远程仓库。
 
 ## 最新发布
-- 2026-04-27 已发布轮播首页版本。
-- 提交：`7cfa2f3 Publish carousel homepage`
+- 2026-04-29 已发布新番周历页面版本。
+- 提交：`348e5fd Add anime weekly schedule page`
 - 线上地址：`https://aikyan210311.github.io/ano-tools/`
-- 验证：线上首页返回 HTTP 200，资源 hash 与本地构建产物一致。
+- 验证：发布前 `npm.cmd run lint` 和 `npm.cmd run build` 通过，已推送 `main` 触发 GitHub Pages Actions。
 
 ## 当前未发布改动
 - 首页已按用户提供的五张参考图完成本地视觉改版。

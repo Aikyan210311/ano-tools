@@ -336,3 +336,15 @@
   - `npm.cmd run lint` 通过。
   - `npm.cmd run build` 通过。
   - 本地开发服务 `http://127.0.0.1:5180/#anime` 返回 HTTP 200。
+### 2026-04-29：发布新番周历页面版本
+- **状态：** 已推送线上发布流程。
+- **提交：** `348e5fd Add anime weekly schedule page`
+- **远程分支：** `origin/main`
+- **线上地址：** `https://aikyan210311.github.io/ano-tools/#anime`
+- **发布前验证：**
+  - `npm.cmd run lint` 通过。
+  - `npm.cmd run build` 首次在沙箱内因 esbuild 子进程 `EPERM` 失败；按授权在沙箱外重跑后通过。
+- **发布操作：**
+  - 已暂存 `src/App.tsx`、`src/styles.css`、`src/data/anime.ts`、`task_plan.md`、`progress.md`、`findings.md`。
+  - 未暂存 `.tmp-yuc-202604.html` 和历史未跟踪图片素材。
+  - `git push origin main` 成功，推送 `2090206..348e5fd`。
